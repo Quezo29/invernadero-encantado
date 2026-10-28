@@ -17,6 +17,10 @@ function esFechaNoFutura(valor, ahora = new Date()) {
 function validarRiego(datos = {}, ahora = new Date()) {
   const errores = [];
 
+  if (!datos || typeof datos !== "object" || Array.isArray(datos)) {
+    return ["El cuerpo de la solicitud debe ser un objeto"];
+  }
+
   if (!datos.planta) {
     errores.push("La planta es obligatoria");
   }

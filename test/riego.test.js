@@ -19,6 +19,11 @@ test("validarRiego acepta un riego válido sin fecha", () => {
   assert.deepEqual(validarRiego(datosValidos()), []);
 });
 
+test("validarRiego rechaza un cuerpo que no es un objeto", () => {
+  assert.ok(validarRiego(null).length > 0);
+  assert.ok(validarRiego([]).length > 0);
+});
+
 test("validarRiego acepta una fecha pasada", () => {
   const fecha = new Date(Date.now() - 60 * 60 * 1000);
   assert.deepEqual(validarRiego(datosValidos({ fecha })), []);

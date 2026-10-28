@@ -15,6 +15,10 @@ function esIntervaloValido(valor) {
 function validarPlanta(datos = {}) {
   const errores = [];
 
+  if (!datos || typeof datos !== "object" || Array.isArray(datos)) {
+    return ["El cuerpo de la solicitud debe ser un objeto"];
+  }
+
   for (const [campo, mensaje] of CAMPOS_TEXTO_OBLIGATORIOS) {
     if (!esTextoNoVacio(datos[campo])) {
       errores.push(mensaje);

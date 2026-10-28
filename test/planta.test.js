@@ -40,6 +40,11 @@ test("validarPlanta rechaza intervalo 0, negativo o con fracción", () => {
   }
 });
 
+test("validarPlanta rechaza un cuerpo que no es un objeto", () => {
+  assert.ok(validarPlanta(null).length > 0);
+  assert.ok(validarPlanta([]).length > 0);
+});
+
 test("validarPlanta acepta un intervalo mínimo de 1 día", () => {
   assert.deepEqual(validarPlanta(datosValidos({ intervaloRiegoDias: 1 })), []);
 });
