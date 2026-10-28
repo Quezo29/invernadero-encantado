@@ -9,7 +9,8 @@
 
 - Los 12 criterios de aceptación tienen cobertura automática.
 - 12 de 12 criterios: **cumple**.
-- La persistencia real contra MongoDB/Atlas y la validación manual con `curl` quedan **sin verificar** porque no hay `.env` con `MONGODB_URI` ni una instancia local de MongoDB.
+- La integración real con MongoDB se validó con una instancia efímera local: 9 de 9 casos HTTP pasaron.
+- La validación contra Atlas y el `curl` manual quedan **sin verificar** porque no hay `.env` con `MONGODB_URI` en este entorno.
 - Los tests de API usan repositorios en memoria; no requieren base de datos.
 
 ## Criterio → verificación
@@ -28,7 +29,24 @@
 | CA-1.3.5 · Rechazar cantidad 0 o negativa | Test de dominio, modelo y API | cumple | `test/riego.test.js` → «rechaza cantidad 0 o negativa»; `test/riegos.api.test.js` → «rechaza cantidad 0 o negativa» |
 | CA-1.3.6 · Rechazar riego sin cuidador | Test de dominio, modelo y API | cumple | `test/riego.test.js` → «rechaza la falta de planta o de cuidador»; `test/riegos.api.test.js` → «rechaza la falta de cuidador» |
 | CA-1.3.7 · Usar la fecha actual si se omite | Test de modelo y API | cumple | `test/riego.test.js` → «aplica la fecha actual por defecto»; `test/riegos.api.test.js` → «usa la fecha actual cuando no se indica» |
-| Integración real con MongoDB y `curl` | Prueba manual | sin verificar | No hay `.env` con `MONGODB_URI` ni MongoDB local en el entorno de ejecución |
+| Integración real con MongoDB efímero y API HTTP | Validación de integración con 9 casos | cumple | MongoDB efímero local + `src/app.js`, `src/repositorios/` y modelos reales; 9 de 9 casos con el código esperado |
+| Integración con Atlas y `curl` manual | Prueba manual | sin verificar | No hay `.env` con `MONGODB_URI` en el entorno de ejecución |
+
+## Integración con MongoDB efímero
+
+Se ejecutó un script temporal (no versionado) contra una instancia efímera de MongoDB, usando la app, los modelos y los repositorios reales. Después se retiró la dependencia auxiliar. Resultado: 9 de 9 casos correctos.
+
+| Caso | Esperado | Obtenido |
+| --- | --- | --- |
+| Registrar planta válida | 201 | 201 |
+| Registrar planta con intervalo 0 | 400 | 400 |
+| Listar plantas | 200 | 200 |
+| Registrar riego válido | 201 | 201 |
+| Registrar riego con fecha futura | 400 | 400 |
+| Registrar riego con cantidad 0 | 400 | 400 |
+| Registrar riego de planta inexistente | 404 | 404 |
+| Consultar riegos de planta existente | 200 | 200 |
+| Consultar riegos de planta inexistente | 404 | 404 |
 
 ## Validación manual pendiente
 
@@ -44,4 +62,4 @@ Para completar la fila «sin verificar»:
 
 ## Conclusión
 
-La implementación cumple los criterios de la spec en las capas de dominio, modelo y API. La única verificación pendiente es la integración con la base de datos real, que depende de las credenciales del estudiante.
+La implementación cumple los criterios de la spec en las capas de dominio, modelo y API, y la integración con MongoDB se comprobó con una instancia efímera. La única verificación pendiente es la conexión a Atlas y la prueba manual con `curl`, que depende de las credenciales del estudiante.
