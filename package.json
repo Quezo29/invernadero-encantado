@@ -1,18 +1,26 @@
 {
   "name": "invernadero-encantado",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API REST del Invernadero Encantado del Departamento de Parques de Pawnee",
+  "main": "src/index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test": "node --test",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "prettier": "^3.9.10"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mongoose": "^8.24.7"
   }
 }

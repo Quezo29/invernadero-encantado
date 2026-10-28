@@ -190,7 +190,7 @@ Los tests de API usan repositorios en memoria, por lo que no requieren MongoDB. 
 | T-01 · Configuración | `package.json`, `package-lock.json`, `.env.example`, `src/app.js`, `src/index.js` |
 | T-02 · Modelo y dominio de Planta | `src/models/Planta.js`, `src/dominio/planta.js` |
 | T-03 · Endpoints de plantas | `src/routes/plantas.js`, `src/repositorios/plantas.js`, `src/app.js` |
-| T-04 · Tests de planta | `test/planta.test.js`, `test/plantas.api.test.js`, `test/ayudas/app.js` |
+| T-04 · Tests de planta | `test/planta.test.js`, `test/plantas.api.test.js`, `test-utils/app.js` |
 | T-05 · Modelo y dominio de Riego | `src/models/Riego.js`, `src/dominio/riego.js` |
 | T-06 · Endpoints de riegos | `src/routes/riegos.js`, `src/repositorios/riegos.js`, `src/app.js` |
 | T-07 · Tests de riego | `test/riego.test.js`, `test/riegos.api.test.js` |

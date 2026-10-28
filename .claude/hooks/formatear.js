@@ -10,7 +10,10 @@ process.stdin.on("end", async () => {
     if (!archivo || !/\.(js|json)$/.test(archivo)) return;
     const codigo = fs.readFileSync(archivo, "utf8");
     const opciones = (await prettier.resolveConfig(archivo)) ?? {};
-    const formateado = await prettier.format(codigo, { ...opciones, filepath: archivo });
+    const formateado = await prettier.format(codigo, {
+      ...opciones,
+      filepath: archivo,
+    });
     if (formateado !== codigo) fs.writeFileSync(archivo, formateado);
   } catch {
     // Si algo falla, no bloqueamos el trabajo del agente.
