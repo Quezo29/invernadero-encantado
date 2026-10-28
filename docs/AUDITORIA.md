@@ -3,7 +3,7 @@
 **Fecha:** 27 de octubre de 2026
 **Spec:** `docs/specs/01-plantas-y-riegos.md`
 **Comando ejecutado:** `npm test`
-**Resultado:** 32 tests, 32 pasan, 0 fallan.
+**Resultado:** 34 tests, 34 pasan, 0 fallan.
 
 ## Resumen
 
