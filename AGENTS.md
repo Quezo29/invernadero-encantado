@@ -1,5 +1,4 @@
 # AGENTS.md
-
 ## Proyecto
 
 API REST para registrar las plantas mágicas de un invernadero y sus riegos.
@@ -19,7 +18,7 @@ API REST para registrar las plantas mágicas de un invernadero y sus riegos.
 - `src/models/`
 - `src/routes/`
 - `src/dominio/` (funciones puras)
-- `test/`
+- `test/`, `src/repositorios/`
 - `docs/prd/`, `docs/specs/`
 
 ## Comandos
