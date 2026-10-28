@@ -74,12 +74,12 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Configuración
 - **Descripción:** dejar listo el proyecto Node con Express, Mongoose, dotenv y los scripts de desarrollo y test. Incluye el archivo de ejemplo de variables de entorno, sin secretos.
 - **Definition of Done:**
-  - [ ] `package.json` existe con los scripts `dev` y `test`.
-  - [ ] Las dependencias de ejecución y desarrollo están instaladas.
-  - [ ] `.env.example` contiene las variables necesarias con valores vacíos o de ejemplo.
-  - [ ] `.env` está ignorado por git.
+  - [x] `package.json` existe con los scripts `dev` y `test`.
+  - [x] Las dependencias de ejecución y desarrollo están instaladas.
+  - [x] `.env.example` contiene las variables necesarias con valores vacíos o de ejemplo.
+  - [x] `.env` está ignorado por git.
 - **Dependencias:** ninguna.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 #### T-02 · Modelo y dominio de Planta
 
@@ -87,13 +87,13 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Modelo/Dominio
 - **Descripción:** representar una planta con sus datos, su intervalo de riego y su estado de reposo, y concentrar en funciones puras las reglas de validación de esos datos.
 - **Definition of Done:**
-  - [ ] El modelo guarda nombre, especie, ubicación, intervalo de riego, estado de reposo, cuidados especiales y fecha de registro.
-  - [ ] El estado de reposo vale «no» cuando no se indica.
-  - [ ] Se rechazan intervalos que no sean enteros o menores que 1.
-  - [ ] Se rechazan plantas sin nombre, especie, ubicación o intervalo.
-  - [ ] Las reglas de validación pueden probarse sin base de datos.
+  - [x] El modelo guarda nombre, especie, ubicación, intervalo de riego, estado de reposo, cuidados especiales y fecha de registro.
+  - [x] El estado de reposo vale «no» cuando no se indica.
+  - [x] Se rechazan intervalos que no sean enteros o menores que 1.
+  - [x] Se rechazan plantas sin nombre, especie, ubicación o intervalo.
+  - [x] Las reglas de validación pueden probarse sin base de datos.
 - **Dependencias:** T-01.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 #### T-03 · Endpoints de plantas
 
@@ -101,12 +101,12 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Endpoint/API
 - **Descripción:** exponer el registro y la consulta de plantas en la capa HTTP, traduciendo las validaciones del dominio a respuestas claras para el cuidador.
 - **Definition of Done:**
-  - [ ] Se puede registrar una planta válida y la respuesta la devuelve con su identificador.
-  - [ ] Se puede consultar la lista de plantas registradas.
-  - [ ] Los datos inválidos producen una respuesta de error comprensible.
-  - [ ] Las rutas quedan publicadas bajo `/api`.
+  - [x] Se puede registrar una planta válida y la respuesta la devuelve con su identificador.
+  - [x] Se puede consultar la lista de plantas registradas.
+  - [x] Los datos inválidos producen una respuesta de error comprensible.
+  - [x] Las rutas quedan publicadas bajo `/api`.
 - **Dependencias:** T-02.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 #### T-04 · Tests de planta
 
@@ -114,13 +114,13 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Test
 - **Descripción:** cubrir con tests automáticos las validaciones del modelo y del dominio de planta, y el comportamiento de los endpoints de registro y consulta.
 - **Definition of Done:**
-  - [ ] Hay tests para el registro válido y para cada dato obligatorio faltante.
-  - [ ] Hay tests para intervalo 0, negativo y con fracción.
-  - [ ] Hay tests para el estado de reposo por defecto y la fecha de registro.
-  - [ ] Los tests de endpoints usan dobles de los repositorios, sin base de datos.
-  - [ ] `npm test` pasa.
+  - [x] Hay tests para el registro válido y para cada dato obligatorio faltante.
+  - [x] Hay tests para intervalo 0, negativo y con fracción.
+  - [x] Hay tests para el estado de reposo por defecto y la fecha de registro.
+  - [x] Los tests de endpoints usan dobles de los repositorios, sin base de datos.
+  - [x] `npm test` pasa.
 - **Dependencias:** T-03.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 ### HU-1.3 · Registrar un riego
 
@@ -130,13 +130,13 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Modelo/Dominio
 - **Descripción:** representar un riego asociado a una planta, con fecha, cantidad y cuidador, y concentrar en funciones puras las reglas de validación.
 - **Definition of Done:**
-  - [ ] El modelo guarda la planta asociada, la fecha, la cantidad de agua y el cuidador.
-  - [ ] La fecha vale «ahora» cuando no se indica.
-  - [ ] Se rechazan fechas futuras y cantidades menores o iguales a 0.
-  - [ ] Se rechaza un riego sin planta o sin cuidador.
-  - [ ] Las reglas de validación pueden probarse sin base de datos.
+  - [x] El modelo guarda la planta asociada, la fecha, la cantidad de agua y el cuidador.
+  - [x] La fecha vale «ahora» cuando no se indica.
+  - [x] Se rechazan fechas futuras y cantidades menores o iguales a 0.
+  - [x] Se rechaza un riego sin planta o sin cuidador.
+  - [x] Las reglas de validación pueden probarse sin base de datos.
 - **Dependencias:** T-01, T-02.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 #### T-06 · Endpoints de riegos
 
@@ -144,12 +144,12 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Endpoint/API
 - **Descripción:** exponer el registro de riegos y la consulta del historial de una planta, verificando que la planta exista.
 - **Definition of Done:**
-  - [ ] Se puede registrar un riego válido y la respuesta lo devuelve con su identificador.
-  - [ ] Un riego para una planta inexistente se rechaza como no encontrado.
-  - [ ] Se puede consultar el historial de riegos de una planta existente.
-  - [ ] Los datos inválidos producen una respuesta de error comprensible.
+  - [x] Se puede registrar un riego válido y la respuesta lo devuelve con su identificador.
+  - [x] Un riego para una planta inexistente se rechaza como no encontrado.
+  - [x] Se puede consultar el historial de riegos de una planta existente.
+  - [x] Los datos inválidos producen una respuesta de error comprensible.
 - **Dependencias:** T-03, T-05.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 #### T-07 · Tests de riego
 
@@ -157,12 +157,12 @@ Como cuidador del invernadero, quiero consultar los riegos de una planta, para r
 - **Tipo:** Test
 - **Descripción:** cubrir con tests automáticos las validaciones del modelo y del dominio de riego, y el comportamiento de los endpoints de registro e historial.
 - **Definition of Done:**
-  - [ ] Hay tests para riego válido, fecha futura, fecha pasada, cantidad 0 y cantidad negativa.
-  - [ ] Hay tests para planta inexistente y para historial de una planta existente.
-  - [ ] Los tests de endpoints usan dobles de los repositorios, sin base de datos.
-  - [ ] `npm test` pasa.
+  - [x] Hay tests para riego válido, fecha futura, fecha pasada, cantidad 0 y cantidad negativa.
+  - [x] Hay tests para planta inexistente y para historial de una planta existente.
+  - [x] Los tests de endpoints usan dobles de los repositorios, sin base de datos.
+  - [x] `npm test` pasa.
 - **Dependencias:** T-06.
-- **Estado:** pendiente.
+- **Estado:** hecho.
 
 ## Orden de ejecución sugerido
 
