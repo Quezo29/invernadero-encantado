@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 660" width="1280" height="660" role="img" aria-label="Wireframe de escritorio de la lista de plantas con una columna de acción Regar">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 900" width="1280" height="900" role="img" aria-label="Wireframe de escritorio de la lista de plantas con una columna de acción Regar">
   <title>Lista · CA-1.8.1</title>
 
   <!-- Banda de anotación -->
@@ -50,13 +50,13 @@
   <!-- Formulario de la pantalla (sin cambios) -->
   <text x="160" y="452" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#212121">Registrar una planta</text>
   <text x="160" y="488" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Nombre</text>
-  <rect x="160" y="496" width="228" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
-  <text x="404" y="488" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Especie</text>
-  <rect x="404" y="496" width="228" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
-  <text x="648" y="488" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Ubicación</text>
-  <rect x="648" y="496" width="228" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
-  <text x="892" y="488" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Riego cada (días)</text>
-  <rect x="892" y="496" width="228" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
-  <rect x="160" y="568" width="200" height="48" rx="8" fill="#616161"/>
-  <text x="260" y="598" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Registrar planta</text>
+  <rect x="160" y="496" width="960" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <text x="160" y="572" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Especie</text>
+  <rect x="160" y="580" width="960" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <text x="160" y="656" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Ubicación</text>
+  <rect x="160" y="664" width="960" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <text x="160" y="740" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Riego cada (días)</text>
+  <rect x="160" y="748" width="960" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <rect x="160" y="820" width="200" height="48" rx="8" fill="#616161"/>
+  <text x="260" y="850" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Registrar planta</text>
 </svg>
