@@ -3,6 +3,7 @@ import { listarPlantas, registrarPlanta, repartirErrores } from "../api.js";
 import Campo from "../componentes/Campo.jsx";
 import ListaVacia from "../componentes/ListaVacia.jsx";
 import Mensaje from "../componentes/Mensaje.jsx";
+import PanelRiego from "../componentes/PanelRiego.jsx";
 
 const CAMPOS = ["nombre", "especie", "ubicacion", "intervaloRiegoDias"];
 const VACIO = {
@@ -18,6 +19,8 @@ export default function Plantas({ alAbrir }) {
   const [datos, setDatos] = useState(VACIO);
   const [errores, setErrores] = useState({ porCampo: {}, generales: [] });
   const [exito, setExito] = useState("");
+  const [exitoRiego, setExitoRiego] = useState("");
+  const [plantaDelPanel, setPlantaDelPanel] = useState(null);
   const [enviando, setEnviando] = useState(false);
   const primerCampo = useRef(null);
 
@@ -73,6 +76,7 @@ export default function Plantas({ alAbrir }) {
         <h2 id="titulo-lista" className="solo-lector">
           Lista de plantas
         </h2>
+        {exitoRiego && <Mensaje tipo="exito">{exitoRiego}</Mensaje>}
         {estado === "cargando" && (
           <p className="texto-secundario">Cargando plantas…</p>
         )}
@@ -97,6 +101,9 @@ export default function Plantas({ alAbrir }) {
                 <th scope="col">Especie</th>
                 <th scope="col">Ubicación</th>
                 <th scope="col">Riego cada</th>
+                <th scope="col">
+                  <span className="solo-lector">Acción</span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -119,6 +126,19 @@ export default function Plantas({ alAbrir }) {
                   <td data-etiqueta="Riego cada">
                     {planta.intervaloRiegoDias}{" "}
                     {planta.intervaloRiegoDias === 1 ? "día" : "días"}
+                  </td>
+                  <td className="celda-accion">
+                    <button
+                      type="button"
+                      className="boton-secundario boton-fila"
+                      aria-label={`Regar ${planta.nombre}`}
+                      onClick={() => {
+                        setExitoRiego("");
+                        setPlantaDelPanel(planta);
+                      }}
+                    >
+                      Regar
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -176,6 +196,18 @@ export default function Plantas({ alAbrir }) {
           </button>
         </form>
       </section>
+
+      {plantaDelPanel && (
+        <PanelRiego
+          planta={plantaDelPanel}
+          alCerrar={() => setPlantaDelPanel(null)}
+          alGuardar={() => {
+            const nombre = plantaDelPanel.nombre;
+            setPlantaDelPanel(null);
+            setExitoRiego(`Riego guardado para ${nombre}.`);
+          }}
+        />
+      )}
     </>
   );
 }
