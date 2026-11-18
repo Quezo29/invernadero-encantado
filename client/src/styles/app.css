@@ -185,6 +185,12 @@ form {
   border: 2px solid var(--color-error);
 }
 
+.campo input:disabled {
+  border-color: var(--color-borde);
+  background: var(--color-fondo);
+  color: var(--color-texto-secundario);
+}
+
 .campo-ayuda {
   color: var(--color-texto-secundario);
   font-size: 14px;
@@ -225,12 +231,48 @@ form {
 
 .boton-primario:disabled {
   cursor: progress;
+  background: var(--color-texto-secundario);
 }
 
 .boton-secundario {
   border: 2px solid var(--color-primario);
   background: var(--color-superficie);
   color: var(--color-primario);
+}
+
+/* Acción «Regar» en cada fila de la lista (HU-1.8) */
+.boton-fila {
+  padding: var(--espacio-2) var(--espacio-4);
+  font-size: 16px;
+}
+
+/* Panel de riego rápido (HU-1.8) */
+.panel-riego {
+  width: min(480px, calc(100% - var(--espacio-6)));
+  margin: auto;
+  padding: var(--espacio-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+}
+
+.panel-riego::backdrop {
+  background: var(--color-fondo);
+  opacity: 0.9;
+}
+
+.panel-riego h2 {
+  margin-bottom: var(--espacio-1);
+}
+
+.panel-riego .texto-secundario {
+  margin-bottom: var(--espacio-4);
+}
+
+.acciones-panel {
+  display: flex;
+  gap: var(--espacio-3);
 }
 
 /* Mensajes */
@@ -306,5 +348,32 @@ form {
 
   .tabla-plantas td:first-child .enlace-planta {
     font-size: 18px;
+  }
+
+  .tabla-plantas td.celda-accion::before {
+    content: none;
+  }
+
+  .tabla-plantas td.celda-accion {
+    text-align: right;
+  }
+
+  .panel-riego {
+    inset: auto 0 0 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: var(--espacio-5) var(--espacio-4);
+    border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
+    border-bottom: none;
+  }
+
+  .acciones-panel {
+    flex-direction: column;
+  }
+
+  .acciones-panel .boton-primario,
+  .acciones-panel .boton-secundario {
+    align-self: stretch;
   }
 }

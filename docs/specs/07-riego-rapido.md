@@ -51,3 +51,10 @@ El frontend no tiene tests automáticos (spec 02). `npm test` debe seguir pasand
 ## Archivos
 
 `client/src/pantallas/Plantas.jsx` · `client/src/componentes/PanelRiego.jsx` (nuevo) · `client/src/styles/app.css`
+
+## Pendientes
+
+- **Formato de la fecha.** El campo es un `<input type="date">`, como en el detalle, así que el navegador la muestra en su formato corto («11/18/2026» en la captura) y no como «18 nov 2026» del wireframe. El día es el mismo; si se quiere el texto del wireframe, hay que cambiar el control en otra spec.
+- **Planta borrada (404).** El panel muestra «No encontramos esa planta. Puede que se haya borrado.» No está en los criterios, pero evita dar un mensaje de conexión cuando la API sí respondió.
+- **Capturas con datos de prueba.** Se sacaron con una API local que sirve tres plantas de ejemplo, porque el equipo de clase no tenía la base de datos configurada. Repetirlas con la API real antes de aprobar el PR.
+
