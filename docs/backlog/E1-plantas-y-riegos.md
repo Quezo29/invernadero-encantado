@@ -335,6 +335,55 @@ Como cuidador, quiero corregir o borrar un riego mal registrado, para que un err
 | 4.4 Historial de riegos | HU-1.4 |
 | 4.5 Lista de plantas | HU-1.5 |
 
+### HU-1.8 · Registrar un riego rápido desde la lista
+Como cuidador, quiero registrar un riego desde la lista de plantas sin abrir su detalle, para anotarlo en segundos mientras recorro las mesas.
+
+- **Estado:** refinada. **Sprint:** 2026-11-18. **Alcance:** §4.2 por otra vía (el mismo riego, anotado desde la lista). **Reglas:** 6.4, 6.5, 6.10.
+- **Decisiones del cliente:** el panel sugiere 500 ml; la fecha por defecto es hoy; no se pide cuidador (para eso está el detalle); usa `POST /api/riegos`, que ya existe. No cambia el backend.
+
+**Reglas que aplican:**
+- D6: la cantidad se indica en ml; el panel sugiere 500.
+- D2 + 6.10: la cantidad debe ser un entero mayor que 0.
+- 6.4 + 6.5: la fecha por defecto es hoy, en días de calendario y con la hora local del invernadero. No puede ser futura ni anterior al registro de la planta; la segunda comprobación la hace la API.
+- El riego queda asociado a la planta de la fila donde se abrió el panel, sin cambiarla.
+
+**Criterios de aceptación:**
+
+- **CA-1.8.1 · Abrir el panel desde la fila**
+  DADO la lista de plantas,
+  CUANDO el cuidador pulsa «Regar» en la fila de «Mandrágora»,
+  ENTONCES se abre el panel «Registrar un riego» de esa planta, sin salir de la lista ni abrir su detalle, con la cantidad sugerida 500 y la fecha de hoy.
+
+- **CA-1.8.2 · Panel abierto**
+  DADO el panel abierto de una planta,
+  CUANDO el cuidador lo mira,
+  ENTONCES ve el nombre de la planta, el campo «Cantidad (ml)» con 500, el campo «Fecha» con la fecha de hoy, un solo botón primario «Guardar riego» y un botón secundario «Cancelar».
+
+- **CA-1.8.3 · Guardando**
+  DADO el panel abierto con 500 ml y la fecha de hoy,
+  CUANDO el cuidador pulsa «Guardar riego»,
+  ENTONCES, mientras la API responde, el botón dice «Guardando…» y está desactivado, y el mismo riego no se puede enviar dos veces.
+
+- **CA-1.8.4 · Éxito**
+  DADO el panel abierto con 500 ml y la fecha de hoy,
+  CUANDO el cuidador pulsa «Guardar riego»,
+  ENTONCES el panel se cierra, la lista sigue a la vista y aparece el mensaje «Riego guardado para Mandrágora.».
+
+- **CA-1.8.5 · Error de validación junto al campo**
+  DADO el panel abierto,
+  CUANDO el cuidador indica 0 ml, o una fecha futura, y pulsa «Guardar riego»,
+  ENTONCES el mensaje de la API aparece debajo del campo que falla, el panel sigue abierto con lo escrito y no se registra ningún riego.
+
+- **CA-1.8.6 · Error de conexión**
+  DADO la API apagada,
+  CUANDO el cuidador pulsa «Guardar riego»,
+  ENTONCES aparece arriba del panel «No pudimos guardar el riego. Revisa que la API esté encendida y vuelve a intentarlo.», el panel sigue abierto con lo escrito y no se registra ningún riego.
+
+- **CA-1.8.7 · Uso en móvil a 390 px**
+  DADO un móvil de 390 px de ancho,
+  CUANDO el cuidador abre el panel,
+  ENTONCES el panel ocupa el ancho de la pantalla, no hay desplazamiento horizontal, cada control mide al menos 44 px de alto y sigue habiendo un solo botón primario visible.
+
 ## Decisiones del cliente (2026-11-04)
 
 | # | Decisión |
@@ -342,6 +391,7 @@ Como cuidador, quiero corregir o borrar un riego mal registrado, para que un err
 | D6 | La cantidad de agua se registra y se muestra en mililitros (ml). Confirma X1 de la spec 01. |
 | D7 | HU-1.5 (lista de plantas) entra al MVP como §4.5. |
 | D8 | En este sprint solo se arregla lo que bloquea al frontend. El resto queda como deuda técnica. |
+| D9 | HU-1.8 anota un riego desde la lista con la cantidad sugerida de 500 ml, la fecha de hoy, sin cuidador y con el `POST /api/riegos` existente (2026-11-18). |
 
 ## Deuda técnica
 

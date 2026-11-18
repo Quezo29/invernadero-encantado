@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 848" width="390" height="848" role="img" aria-label="Wireframe móvil de la lista de plantas con un botón Regar en cada fila">
+  <title>Lista · CA-1.8.1, CA-1.8.7</title>
+
+  <!-- Banda de anotación -->
+  <rect width="390" height="32" fill="#F2F2F2"/>
+  <text x="12" y="21" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Lista · CA-1.8.1, CA-1.8.7</text>
+
+  <!-- Cabecera de la app -->
+  <text x="16" y="64" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#212121">Invernadero Encantado</text>
+  <line x1="0" y1="84" x2="390" y2="84" stroke="#D9D9D9"/>
+
+  <!-- Título -->
+  <text x="16" y="124" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#212121">Plantas</text>
+
+  <!-- Fila 1: Mandrágora -->
+  <rect x="16" y="144" width="358" height="180" rx="12" fill="#FFFFFF" stroke="#D9D9D9"/>
+  <text x="32" y="176" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#212121">Mandrágora</text>
+  <text x="32" y="204" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Especie: Mandragora officinarum</text>
+  <text x="32" y="226" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Ubicación: Mesa 2</text>
+  <text x="32" y="248" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Riego cada: 3 días</text>
+  <rect x="262" y="268" width="96" height="44" rx="8" fill="#FFFFFF" stroke="#616161" stroke-width="2"/>
+  <text x="310" y="296" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#616161" text-anchor="middle">Regar</text>
+
+  <!-- Fila 2: Helecho Lunar -->
+  <rect x="16" y="336" width="358" height="180" rx="12" fill="#FFFFFF" stroke="#D9D9D9"/>
+  <text x="32" y="368" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#212121">Helecho Lunar</text>
+  <text x="32" y="396" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Especie: Nephrolepis exaltata</text>
+  <text x="32" y="418" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Ubicación: Mesa 1</text>
+  <text x="32" y="440" font-family="system-ui, sans-serif" font-size="14" fill="#616161">Riego cada: 2 días</text>
+  <rect x="262" y="460" width="96" height="44" rx="8" fill="#FFFFFF" stroke="#616161" stroke-width="2"/>
+  <text x="310" y="488" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#616161" text-anchor="middle">Regar</text>
+
+  <!-- Formulario de la pantalla (sin cambios) -->
+  <text x="16" y="560" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#212121">Registrar una planta</text>
+  <text x="16" y="596" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Nombre</text>
+  <rect x="16" y="604" width="358" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <text x="16" y="668" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#212121">Especie</text>
+  <rect x="16" y="676" width="358" height="44" rx="8" fill="#FFFFFF" stroke="#9E9E9E"/>
+  <rect x="16" y="740" width="200" height="48" rx="8" fill="#616161"/>
+  <text x="116" y="770" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Registrar planta</text>
+</svg>
