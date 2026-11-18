@@ -130,8 +130,9 @@ Lista: Hecho
 Pantallas «Plantas» y «Detalle de planta». Ver `docs/specs/02-frontend-e1.md` y `docs/AUDITORIA-frontend.md`.
 
 ## Spec 07 · Registrar un riego rápido desde la lista
-Lista: Por hacer
+Lista: En revisión
 
+- **PR:** https://github.com/Quezo29/invernadero-encantado/pull/1
 - **Historia:** HU-1.8 · Registrar un riego rápido desde la lista. **Alcance:** PRD §4.2, anotado desde la lista. Criterios en el [backlog de E1](../backlog/E1-plantas-y-riegos.md#hu-18--registrar-un-riego-rápido-desde-la-lista).
 - **Objetivo:** anotar un riego de una planta desde la lista, sin abrir su detalle, en un panel que sugiere 500 ml y la fecha de hoy.
 
